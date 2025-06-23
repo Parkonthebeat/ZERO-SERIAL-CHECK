@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>정품 시리얼 확인</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: "Pretendard", sans-serif;
+      padding: 40px 16px;
+      box-sizing: border-box;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #aaa;
+    }
+    input {
+      width: 100%;
+      max-width: 500px;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      background: #e6f0ff;
+      margin: 0 auto 16px auto;
+      display: block;
+    }
+    button {
+      background-color: #e81e63;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 500px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    .success {
+      color: #4caf50;
+    }
+    .fail {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <h2>Q. 정품 여부는 어떻게 확인할 수 있나요?</h2>
+  <p>제로에서는 위조품 확산을 방지하기 위해 시리얼 번호가 기재된 정품 인증 카드를 함께 제공합니다.<br>아래에 시리얼 번호를 검색해 보세요.</p>
+
+  <input type="text" id="serialInput" placeholder="시리얼 번호 입력" />
+  <button onclick="checkSerial()">조회하기</button>
+  <div id="result"></div>
+
+  <script>
+    async function checkSerial() {
+      const input = document.getElementById("serialInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      try {
+        const response = await fetch("serials.json");
+        const data = await response.json();
+
+        if (data.serials && data.serials.includes(input)) {
+          resultDiv.innerHTML = "✅ 정품으로 등록된 시리얼 번호입니다.";
+          resultDiv.className = "success";
+        } else {
+          resultDiv.innerHTML = "❌ 등록되지 않은 시리얼 번호입니다.";
+          resultDiv.className = "fail";
+        }
+      } catch (error) {
+        resultDiv.innerHTML = "⚠️ 오류가 발생했습니다. 잠시 후 다시 시도해주세요.";
+        resultDiv.className = "fail";
+      }
+    }
+  </script>
+</body>
+</html>
