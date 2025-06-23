@@ -64,7 +64,7 @@
       }
 
       try {
-        const response = await fetch('https://parkonthebeat.github.io/zero-serial-check/serials.json'); // ← 실제 배포 URL
+        const response = await fetch('https://parkonthebeat.github.io/ZERO-SERIAL-CHECK/serials.json');
         const data = await response.json();
 
         if (data.serials && data.serials.includes(input)) {
