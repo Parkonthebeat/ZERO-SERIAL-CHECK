@@ -1,98 +1,85 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZERO 정품 확인</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #111;
-      color: #fff;
-      font-family: 'Pretendard', sans-serif;
-    }
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-    }
-    p.description {
-      font-size: 17px;
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 36px;
-    }
-    input[type="text"] {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      padding: 20px;
-      font-size: 18px;
-      border: 1px solid #ddd;
-      color: #000;
-      background-color: #fff;
-      box-sizing: border-box;
-    }
-    button {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      padding: 20px;
-      margin-top: 20px;
-      background-color: #e72d67;
-      color: #000;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-sizing: border-box;
-    }
-    button:hover {
-      background-color: #000;
-      color: #fff;
-    }
-    #zeroSerialResult {
-      margin-top: 36px;
-      font-size: 17px;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>Q. 정품 여부는 어떻게 확인할 수 있나요?</h2>
-    <p class="description">
-      제로에서는 위조품 확산을 방지하기 위해 시리얼 번호가 기재된 정품 인증 카드가 함께 제공됩니다.<br />
+<!-- ✅ 정품 확인 전체 영역 -->
+<div style="background-color: #111; padding: 100px 20px;">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center; font-family: 'Pretendard', sans-serif; color: #fff;">
+
+    <!-- 타이틀 -->
+    <h2 style="font-size: 30px; margin-bottom: 20px;">Q. 정품 여부는 어떻게 확인할 수 있나요?</h2>
+
+    <!-- 설명 -->
+    <p style="font-size: 17px; line-height: 1.8; margin-bottom: 36px; color: #ccc;">
+      제로에서는 위조품 확산을 방지하기 위해 시리얼 번호가 기재된 정품 인증 카드가 함께 제공됩니다.<br>
       아래에 시리얼 번호를 검색해 보세요.
     </p>
-    <input type="text" id="zeroSerialInput" placeholder="시리얼 번호를 입력하세요" />
-    <button onclick="checkZeroSerial()">조회하기</button>
-    <p id="zeroSerialResult"></p>
+
+    <!-- 입력창 -->
+    <input
+      type="text"
+      id="zeroSerialInput"
+      placeholder="시리얼 번호를 입력하세요"
+      style="width: 100%; padding: 20px; border: 1px solid #ddd; border-radius: 0px; font-size: 18px; color: #000; background-color: #fff;"
+    />
+
+    <!-- 버튼 -->
+    <button
+      onclick="checkZeroSerial()"
+      style="
+        margin-top: 28px;
+        width: 100%;
+        padding: 20px;
+        border: none;
+        background-color: #e72d67;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 0px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#000'; this.style.color='#fff';"
+      onmouseout="this.style.backgroundColor='#e72d67'; this.style.color='#000';"
+    >
+      조회하기
+    </button>
+
+    <!-- 결과 메시지 -->
+    <p id="zeroSerialResult" style="margin-top: 36px; font-size: 17px; font-weight: 500;"></p>
   </div>
+</div>
 
-  <script>
-    function checkZeroSerial() {
-      const input = document.getElementById('zeroSerialInput').value.trim();
-      const result = document.getElementById('zeroSerialResult');
-      const validSerials = ['ZERO001', 'ZERO002', 'NB2025-A001', 'NB2025-A002'];
+<!-- ✅ 스크립트 (채널별 JSON 대응) -->
+<script>
+  async function checkZeroSerial() {
+    const input = document.getElementById('zeroSerialInput').value.trim().toUpperCase();
+    const result = document.getElementById('zeroSerialResult');
 
-      if (input === '') {
-        result.innerHTML = '시리얼 번호를 입력해주세요.';
-        result.style.color = '#888';
-      } else if (validSerials.includes(input)) {
-        result.innerHTML = '✔️ 정품이 확인되었습니다.';
+    if (input === '') {
+      result.innerHTML = '시리얼 번호를 입력해주세요.';
+      result.style.color = '#888';
+      return;
+    }
+
+    try {
+      const res = await fetch('valid_serials_by_channel.json');
+      const data = await res.json();
+
+      let matchedChannel = null;
+      for (const [channel, serials] of Object.entries(data)) {
+        if (serials.includes(input)) {
+          matchedChannel = channel;
+          break;
+        }
+      }
+
+      if (matchedChannel) {
+        result.innerHTML = `✔️ 정품이 확인되었습니다. (${matchedChannel})`;
         result.style.color = '#2ecc71';
       } else {
         result.innerHTML = '❌ 등록되지 않은 시리얼 번호입니다.';
         result.style.color = '#e74c3c';
       }
+    } catch (error) {
+      result.innerHTML = '⚠️ 시리얼 조회 중 오류가 발생했습니다.';
+      result.style.color = '#f39c12';
     }
-  </script>
-</body>
-</html>
+  }
+</script>
