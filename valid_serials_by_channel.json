@@ -296,7 +296,10 @@
     "EQC001-RM5D8",
     "EQA001-IH4E4",
     "EQA001-XC2F2",
-    "EQA001-CP8C9"
+    "EQA001-CP8C9",
+    "EQC001-ZX3V7",
+    "EQC001-ZQ5R6",
+    "EQA001-FL8I8"
   ],
   "FLEET RUNNER": [
     "ESB011-XX4V3",
@@ -436,7 +439,8 @@
     "ESB012-KV2C5",
     "ESB012-LQ9K3",
     "ESB012-KI8D4",
-    "ESB012-KX9O5"
+    "ESB012-KX9O5",
+    "ESB012-XI1J6"
   ],
   "KREAM": [
     "EFA021-VJ6R1",
@@ -448,6 +452,7 @@
     "EFA021-DK4G6",
     "EFA021-EX9S6",
     "EFA021-ZY1G0",
+    "EFA021-FT6H4",
     "EFA021-FT6H4"
   ]
 }
