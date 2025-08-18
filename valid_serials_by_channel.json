@@ -611,7 +611,8 @@
     "EFA021-GV1Y5",
     "EFA021-HZ9D7",
     "EFA021-YI3J0",
-    "EFA021-GT7Z2"
+    "EFA021-GT7Z2",
+    "EFA021-BC2B0"
   ],
     "GS SHOP": [
     "EMA051-JI8J1",
@@ -1120,5 +1121,9 @@
     "STYLE SELLER": [
     "EMA052-YA0I0",
     "EMA052-JV9R9"
+  ],
+      "29CM": [
+    "EFA022-YA0I0",
+    "EFA022-JV9R9"
   ]
 }
