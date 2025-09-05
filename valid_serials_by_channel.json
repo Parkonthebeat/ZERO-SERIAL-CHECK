@@ -436,7 +436,9 @@
     "EQC001-VB2R1",
     "EQC001-GR7G4",
     "EQA001-TT4D9",
-    "EQA001-FA7G0"
+    "EQA001-FA7G0",
+    "EQA001-VD1I8",
+    "EQA001-MF5I4"
   ],
   "FLEET RUNNER": [
     "ESB011-XX4V3",
@@ -624,11 +626,15 @@
     "EFA021-HZ9D7",
     "EFA021-YI3J0",
     "EFA021-GT7Z2",
-    "EFA021-BC2B0"
+    "EFA021-BC2B0",
+    "EFA021-SY4J4",
+    "EFA021-BK9Q8"
   ],
     "GS SHOP": [
     "EMA051-JI8J1",
-    "EMA051-OF3H2"
+    "EMA051-OF3H2",
+    "EMA051-YA0I0",
+    "EMA051-JV9R9"
   ],
     "ROUNZ": [
     "EOB031-CW9X8",
@@ -1479,5 +1485,8 @@
     "EFA022-MC4Z0",
     "EFA022-XZ8M3",
     "EFA022-MG8F8"
+  ],
+      "LOTTE DUTY FREE": [
+    "EMA052-",
   ]
 }
