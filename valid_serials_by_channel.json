@@ -570,7 +570,9 @@
     "FQA001-LU4N2",
     "FQA001-BH9I4",
     "FQA001-WC3L2",
-    "FQA001-DV1Q7"
+    "FQA001-DV1Q7",
+    "FQA001-BU9N9",
+    "FQA001-NG3I3"
   ],
   "FLEET RUNNER": [
     "ESB011-XX4V3",
@@ -748,7 +750,9 @@
     "FSA012-PN5H6",
     "FSA012-DY5W9",
     "FSA012-ZA7Q2",
-    "FSA012-JL3A9"
+    "FSA012-JL3A9",
+    "FSA012-ZY8Q9",
+    "FSA012-BW2T9"
   ],
   "KREAM": [
     "EFA021-VJ6R1",
@@ -1519,7 +1523,9 @@
     "EOA032-TT2V8",
     "EOA032-OH4L9",
     "EOA032-SB7S1",
-    "EOA032-PE4X0"
+    "EOA032-PE4X0",
+    "EOA032-TN5B9",
+    "EOA032-RW3Q1"
   ],
       "GLASSSTORY/EYEPIA": [
     "EOB032-IO8T6",
@@ -2211,6 +2217,7 @@
     "FFA023-UB5W4",
     "FFA023-QI1T5",
     "FFA023-OX5O9",
-    "FFA023-PV6O1"
+    "FFA023-PV6O1",
+    "FFA023-NX5S7"
   ]
 }
