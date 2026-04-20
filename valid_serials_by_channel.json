@@ -572,7 +572,8 @@
     "FQA001-WC3L2",
     "FQA001-DV1Q7",
     "FQA001-BU9N9",
-    "FQA001-NG3I3"
+    "FQA001-NG3I3",
+    "FQA001-EX7J6"
   ],
   "FLEET RUNNER": [
     "ESB011-XX4V3",
@@ -752,7 +753,10 @@
     "FSA012-ZA7Q2",
     "FSA012-JL3A9",
     "FSA012-ZY8Q9",
-    "FSA012-BW2T9"
+    "FSA012-BW2T9",
+    "FSA012-JA1U7",
+    "FSA012-AH4D7",
+    "FSA012-LF3D7"
   ],
   "KREAM": [
     "EFA021-VJ6R1",
@@ -1932,7 +1936,8 @@
     "FFA022-ME7G4",
     "FFA022-CB2B8",
     "FFA022-KT3I8",
-    "FFA022-MQ3R7"
+    "FFA022-MQ3R7",
+    "FFA022-PR4H6"
   ],
       "LOTTE DUTY FREE": [
     "EMA053-XU8M1",
@@ -2218,6 +2223,14 @@
     "FFA023-QI1T5",
     "FFA023-OX5O9",
     "FFA023-PV6O1",
-    "FFA023-NX5S7"
-  ]
+    "FFA023-NX5S7",
+    "FFA023-XS5A4",
+    "FFA023-CQ4N6",
+    "FFA023-QF1P2",
+    "FFA023-CC2R5",
+    "FFA023-ID4X0"
+  ],
+    "DAVICHI": [
+    "FOB032-LS8G1",
+    "FOB032-QV1E3"
 }
